@@ -3,7 +3,7 @@
 	<persistence-unit name="conta2" transaction-type="RESOURCE_LOCAL">
 		<!-- implementação do JPA, no nosso caso hibernate -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>br.com.model.Conta</class>
+		<class>Conta</class>
 		<class>Movimentacao</class>
 		<properties>
 			<!-- configuraçoes do jdbc -->

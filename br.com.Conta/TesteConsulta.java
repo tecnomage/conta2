@@ -1,5 +1,7 @@
-import javax.management.Query;
-import javax.persistence.EntityManager;
+ import java.util.List;
+
+
+import javax.persistence.*;
 
 import br.com.Util.JpaUtil;
 
@@ -9,11 +11,18 @@ public class TesteConsulta {
 		
 		EntityManager em =new JpaUtil().getEntityManager(); 
 		Conta conta= new Conta();
-		conta.setId(2);
+		conta.setId(12);
 		
-		Query query = (Query) em.createQuery("Select m from Movimentacao where m.conta.id="+conta); 
+		Query query = em.createQuery("select m from movimentacao where m.conta_id=" + conta.getId()); 
 		
-		List<Movimentacao> movimentacoes = query.ge
+		List<Movimentacao> movimentacoes = query.getResultList();
+		
+		for (Movimentacao m : movimentacoes) {
+			
+			System.out.println("Descricao é  " + m.getDescricao());
+			System.out.println("o velor é " + m.getValor());
+			
+		}
 		
 	}
 

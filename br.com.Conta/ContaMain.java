@@ -13,29 +13,29 @@ public class ContaMain {
 		
 		
 		System.out.println("teste");
-		/*
 		Conta conta = new Conta();
 		conta.setBanco("bb tbm");
 		conta.setNumero("454545");
 		conta.setTitular("braga");
 		conta.setAgencia("101010101");
-		*/
+		
 		
 		EntityManager em =new JpaUtil().getEntityManager(); 
 		double inicio = System.currentTimeMillis();
 		em.getTransaction().begin();
 			
-		Conta conta =em.find(Conta.class, 3);
-		System.out.println(conta.getTitular() +" tem conta no banco  " +conta.getBanco());
+		//Conta conta =em.find(Conta.class, 3);
+		//System.out.println(conta.getTitular() +" tem conta no banco  " +conta.getBanco());
 		
-		//em.persist(conta);
+		em.persist(conta);
 		em.getTransaction().commit();
 		
-		conta.setTitular("francielle");
+		//conta.setTitular("francielle");
 		
-		em.getTransaction().begin();
+		/**em.getTransaction().begin();
 		em.merge(conta);
 		em.getTransaction().commit();
+		*/
 		System.out.println(conta.getTitular());		
 		em.close();
 		

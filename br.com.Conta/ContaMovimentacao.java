@@ -26,8 +26,8 @@ public class ContaMovimentacao {
 		Movimentacao movimentacao = new Movimentacao();
 		movimentacao.setData(Calendar.getInstance());
 		movimentacao.setDescricao("saque");
-		movimentacao.setTipoMovimentacao(tipoMovimentacao.SAIDA);
-		movimentacao.setValor(new BigDecimal("12"));
+		movimentacao.setTipoMovimentacao(tipoMovimentacao.ENTRADA);
+		movimentacao.setValor(new BigDecimal("120"));
 		movimentacao.setConta(conta);
 		
 		
