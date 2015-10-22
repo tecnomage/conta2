@@ -1,4 +1,5 @@
- import java.util.List;
+ import java.util.ArrayList;
+import java.util.List;
 
 
 import javax.persistence.*;
@@ -15,7 +16,9 @@ public class TesteConsulta {
 		
 		Query query = em.createQuery("select m from movimentacao where m.conta_id=" + conta.getId()); 
 		
+		System.out.println();
 		List<Movimentacao> movimentacoes = query.getResultList();
+		
 		
 		for (Movimentacao m : movimentacoes) {
 			
